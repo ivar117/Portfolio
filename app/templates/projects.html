@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="underline-header">Solo Projects</h1>
+    <h2>Some of the notable projects that I created and maintain on my own</h2>
+
+    <div class="projects-container">
+        {% for project in soloProjects %}
+        <a class="project-box" href="{{ project.gitRepoLink }}" target="_blank">
+            <img class="open-link" src="{{ url_for('static', filename='images/components/open-link.png') }}" alt="Open link">
+            <div class="title">{{ project.title }}</div>
+            <div class="bottom">
+                <picture>
+                    <source media="(max-width: 300px)" srcset="{{url_for('static', filename='images/projectsImages/solo/180x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 350px)" srcset="{{url_for('static', filename='images/projectsImages/solo/210x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 400px)" srcset="{{url_for('static', filename='images/projectsImages/solo/240x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 500px)" srcset="{{url_for('static', filename='images/projectsImages/solo/300x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 650px)" srcset="{{url_for('static', filename='images/projectsImages/solo/380x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 1050px)" srcset="{{url_for('static', filename='images/projectsImages/solo/462x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 1700px)" srcset="{{url_for('static', filename='images/projectsImages/solo/380x/' + project.imageName + '.jpg')}}" />
+                    <img src="{{ url_for('static', filename='images/projectsImages/solo/462x/' + project.imageName + '.jpg') }}" alt="Project image" class="project-img">
+                </picture>
+                <div class="right">
+                    <div class="description">{{ project.description }}</div>
+
+                    <div class="languages-container">
+                        <div class="languages-header underline-header">Languages:</div>
+                        <div class="languages">{{ project.languages }}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    <h1 class="underline-header">Team Projects</h1>
+    <h2>Projects I have participated in with other people</h2>
+
+    <div class="projects-container">
+        {% for project in teamProjects %}
+        <a class="project-box" href="{{ project.gitRepoLink }}" target="_blank">
+            <img class="open-link" src="{{ url_for('static', filename='images/components/open-link.png') }}" alt="Open link">
+            <div class="title">{{ project.title }}</div>
+            <div class="bottom">
+                <picture>
+                    <source media="(max-width: 300px)" srcset="{{url_for('static', filename='images/projectsImages/team/180x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 350px)" srcset="{{url_for('static', filename='images/projectsImages/team/210x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 400px)" srcset="{{url_for('static', filename='images/projectsImages/team/240x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 500px)" srcset="{{url_for('static', filename='images/projectsImages/team/300x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 650px)" srcset="{{url_for('static', filename='images/projectsImages/team/380x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 1050px)" srcset="{{url_for('static', filename='images/projectsImages/team/462x/' + project.imageName + '.jpg')}}" />
+                    <source media="(max-width: 1700px)" srcset="{{url_for('static', filename='images/projectsImages/team/380x/' + project.imageName + '.jpg')}}" />
+                    <img src="{{ url_for('static', filename='images/projectsImages/team/462x/' + project.imageName + '.jpg') }}" alt="Project image" class="project-img">
+                </picture>
+                <div class="right">
+                    <div class="description">{{ project.description }}</div>
+
+                    <div class="languages-container">
+                        <div class="languages-header underline-header">Languages:</div>
+                        <div class="languages">{{ project.languages }}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}

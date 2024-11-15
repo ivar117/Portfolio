@@ -1,0 +1,11 @@
+@import url('https://code.cdn.mozilla.net/fonts/fira.css');
+
+:root {
+    --main-accent-color: #a476e9;
+    --lighter-background-color: #4a4c4e;
+    --main-background-color: #2a2c2e;
+    --darker-background-color: #1d1f21;
+    --main-text-color: #ffffff;
+    --main-font: 'Fira Sans';
+    --fallback-font: sans-serif;
+}
