@@ -29,3 +29,7 @@ function closeSideNav() {
     document.removeEventListener("keydown", handleSideNavEscPress);
     document.removeEventListener("click", handleClickOutsideSidenav);
 }
+
+document.querySelectorAll("#side-navbar a").forEach(anchor =>
+    anchor.addEventListener("click", closeSideNav)
+);
