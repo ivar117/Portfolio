@@ -4,20 +4,9 @@ import sqlalchemy as sa
 from app.models import Project
 
 @app.route('/')
-@app.route('/about', endpoint='about')
-@app.route('/se')
+@app.route('/index', endpoint='index')
 def se():
-    title = "About me"
-    return render_template('index.html', title=title)
-
-@app.route('/contact')
-def contact():
-    title = "Contact"
-    return render_template('contact.html', title=title)
-
-@app.route('/projects')
-def projects():
-    title = "Projects"
+    title = "Ivar Bjerling - Portfolio"
 
     teamProjects = []
     soloProjects = []
@@ -29,5 +18,5 @@ def projects():
             soloProjects.append(project)
         elif (project.projectType == "team"):
             teamProjects.append(project)
-    
-    return render_template('projects.html', title=title, teamProjects=teamProjects, soloProjects=soloProjects)
+
+    return render_template('index.html', title=title, teamProjects=teamProjects, soloProjects=soloProjects)
