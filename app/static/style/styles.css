@@ -269,11 +269,11 @@ footer .contact a {
     gap: 30px;
 }
 
-.about-container .container-column#left-column {
+.about-container .container-column#about-left-column {
     margin-left: 30px;
 }
 
-.about-container .container-column#right-column {
+.about-container .container-column#about-right-column {
     margin-right: 30px;
 }
 
@@ -352,8 +352,8 @@ footer .contact a {
         gap: 0;
     }
 
-    .about-container .container-column#left-column { margin-left: 0; }
-    .about-container .container-column#right-column { margin-right: 0;}
+    .about-container .container-column#about-left-column { margin-left: 0; }
+    .about-container .container-column#about-right-column { margin-right: 0;}
 
     .about-box { margin: 0 30px 25px 30px; }
 }
